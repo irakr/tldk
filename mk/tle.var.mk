@@ -46,6 +46,8 @@ CFLAGS += -Wno-missing-field-initializers -Wimplicit-fallthrough=2
 CFLAGS += -Wno-format-truncation -Wno-address-of-packed-member
 endif
 
+CFLAGS += -DNETBE_DEBUG -DNETFE_DEBUG
+
 PC_FILE := $(shell $(PKGCONF) --path libdpdk 2>/dev/null)
 CFLAGS += $(shell $(PKGCONF) --cflags libdpdk)
 LDFLAGS_SHARED = $(shell $(PKGCONF) --libs libdpdk)
